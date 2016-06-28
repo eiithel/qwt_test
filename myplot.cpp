@@ -68,35 +68,6 @@ MyPlot::MyPlot(QWidget *parent):
     zoomer[0]->setTrackerPen(QColor(Qt::white));
 
 
-
-
-
-    //    d_crv2 = new QwtPlotCurve("Phase");
-    //#if QT_VERSION >= 0x040000
-    //    d_crv2->setRenderHint(QwtPlotItem::RenderAntialiased);
-    //#endif
-    //    d_crv2->setPen(QPen(Qt::cyan));
-    //    d_crv2->setYAxis(QwtPlot::yRight);
-    //    d_crv2->attach(this);
-
-    // marker
-    //    d_mrk1 = new QwtPlotMarker();
-    //    d_mrk1->setValue(0.0, 0.0);
-    //    d_mrk1->setLineStyle(QwtPlotMarker::VLine);
-    //    d_mrk1->setLabelAlignment(Qt::AlignRight | Qt::AlignBottom);
-    //    d_mrk1->setLinePen(QPen(Qt::green, 0, Qt::DashDotLine));
-    //    d_mrk1->attach(this);
-
-    //    d_mrk2 = new QwtPlotMarker();
-    //    d_mrk2->setLineStyle(QwtPlotMarker::HLine);
-    //    d_mrk2->setLabelAlignment(Qt::AlignRight | Qt::AlignBottom);
-    //    d_mrk2->setLinePen(QPen(QColor(200,150,0), 0, Qt::DashDotLine));
-    //    //    d_mrk2->setSymbol( QwtSymbol(QwtSymbol::Diamond,
-    //    //        QColor(Qt::yellow), QColor(Qt::green), QSize(7,7)));
-    //    d_mrk2->attach(this);
-
-
-
     QVector<double> xData;
     QVector<double> yData;
     QVector<double> zData = readFile();
@@ -124,7 +95,6 @@ void MyPlot::hideplot(){
         ishiden =false;
     }else{
         d_crv1->setVisible(false);
-        //zoomer[0]->zoom(0);// defait le zoom
 
         ishiden = true;
     }
@@ -133,7 +103,7 @@ void MyPlot::hideplot(){
 
 
 void MyPlot::zoomoff(){
-    //zoomer[0]->zoom(0);
+
     zoomer[0]->zoom(0);
     d_crv1->setVisible(true);
 
@@ -161,8 +131,7 @@ QVector<double> MyPlot::readFile(){
     file.seek(0);
 
     while(!in.atEnd()){
-        //        in.readLine();// il n'arrive pas à lire les lignes.. juste une
-        //        in >> buffer;
+
         in.readLine();
         in >> buffer;
         humidity.push_back(buffer);
