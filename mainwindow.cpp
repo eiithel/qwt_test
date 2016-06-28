@@ -11,11 +11,6 @@
 #include <qwt/qwt_plot_zoomer.h>
 #include <QFile>
 
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkRequest>
-#include <QtNetwork/QNetworkReply>
-#include <QUrl>
-
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
