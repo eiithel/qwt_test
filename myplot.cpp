@@ -115,18 +115,13 @@ QVector<double> MyPlot::readFile(){
     file.setFileName("/home/ethel/qwt-5.2/test-ethel/test3/result.txt");
     file.open(QIODevice::ReadOnly | QIODevice::Text| QIODevice::ReadWrite);
 
-    //    QDataStream in(&file);
     QVector<double> humidity;
-    //QByteArray foo = file.readAll();
-    //foo.trimmed();
-    //qWarning() << foo.size();
 
     QTextStream in(&file);
     QByteArray line;
 
 
     double buffer;
-    qDebug() << "can read lines?\n";
     qDebug() << file.canReadLine();
     file.seek(0);
 
